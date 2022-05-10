@@ -5,18 +5,16 @@ import inputSubstancia from './components/inputSubstancia'
 // function App() {
 //   return (
 //     <Fragment>
-//       <div className="container">{inputSubstancia}</div>
+//       <inputSubstancia />
 //     </Fragment>
 //   )
 // }
-//
+
 export default class App extends Component {
   render() {
     return (
       <Fragment>
-        <div className="container">
-          <inputSubstancia />
-        </div>
+        <inputSubstancia />
       </Fragment>
     )
   }
