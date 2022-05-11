@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const pool = require('./db')
+require('dotenv').config()
 
 //middleware
 app.use(cors())
@@ -9,13 +10,13 @@ app.use(express.json()) //req.body
 
 //ROUTES//
 
-// create substancias
+// create aplicacao
 
-app.post('/substancias', async (req, res) => {
+app.post('/api/v1/aplicacao', async (req, res) => {
   try {
     const { nome, meia_vidah, descricao, colaterais } = req.body
     const newSubstancia = await pool.query(
-      'INSERT INTO substancias (nome, meia_vidah, descricao, colaterais) VALUES ($1, $2, $3, $4)',
+      'INSERT INTO aplicacoes (2, meia_vidah, descricao, colaterais) VALUES ($1, $2, $3, $4)',
       [nome, meia_vidah, descricao, colaterais]
     )
     res.json(newSubstancia.rows[0])
@@ -82,7 +83,7 @@ app.delete('/substancias/:id', async (req, res) => {
 })
 
 //-------------------------------------------//
-
-app.listen(5000, () => {
-  console.log('server has started on port 5000')
+const port = process.env.PORT || 3001
+app.listen(port, () => {
+  console.log(`server has started on port ${port}`)
 })
