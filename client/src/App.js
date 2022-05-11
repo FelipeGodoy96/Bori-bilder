@@ -5,7 +5,9 @@ import InputSubstancia from './components/InputSubstancia'
 function App() {
   return (
     <Fragment>
-      <InputSubstancia />
+      <div className="container mt-3">
+        <InputSubstancia />
+      </div>
     </Fragment>
   )
 }

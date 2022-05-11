@@ -4,19 +4,19 @@ const cors = require('cors')
 const pool = require('./db')
 
 //middleware
-app.use(cours())
+app.use(cors())
 app.use(express.json()) //req.body
 
 //ROUTES//
 
 // create substancias
 
-app.post('/substancia', async (req, res) => {
+app.post('/substancias', async (req, res) => {
   try {
-    const { descricao } = req.body
+    const { nome, meia_vidah, descricao, colaterais } = req.body
     const newSubstancia = await pool.query(
-      'INSERT INTO substancias (descricao) VALUES ($1)',
-      [descricao]
+      'INSERT INTO substancias (nome, meia_vidah, descricao, colaterais) VALUES ($1, $2, $3, $4)',
+      [nome, meia_vidah, descricao, colaterais]
     )
     res.json(newSubstancia.rows[0])
   } catch (err) {
@@ -26,7 +26,7 @@ app.post('/substancia', async (req, res) => {
 
 // get all substancias
 
-app.get('/substancia', async (req, res) => {
+app.get('/substancias', async (req, res) => {
   try {
     const allSubstancias = await pool.query('SELECT * FROM substancias')
     res.json(allSubstancias.rows)
