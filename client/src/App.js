@@ -1,23 +1,23 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import './App.css'
-import inputSubstancia from './components/inputSubstancia'
+import InputSubstancia from './components/InputSubstancia'
 
-// function App() {
-//   return (
-//     <Fragment>
-//       <inputSubstancia />
-//     </Fragment>
-//   )
-// }
-
-export default class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <inputSubstancia />
-      </Fragment>
-    )
-  }
+function App() {
+  return (
+    <Fragment>
+      <InputSubstancia />
+    </Fragment>
+  )
 }
 
-// export default App
+// export default class App extends React.Fragment {
+//   render() {
+//     return (
+//       <Fragment>
+//         <inputSubstancia />
+//       </Fragment>
+//     )
+//   }
+// }
+
+export default App
