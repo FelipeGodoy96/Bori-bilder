@@ -6,7 +6,7 @@ import 'bootstrap'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.Fragment>
+  <Fragment>
     <App />
-  </React.Fragment>
+  </Fragment>
 )
