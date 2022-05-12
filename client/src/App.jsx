@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter as Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './routes/Home'
 import EditPage from './routes/EditPage'
@@ -8,14 +8,14 @@ import DetailPage from './routes/DetailPage'
 
 
 function App() {
-  return (  
-    <>
+  return (     
+    <BrowserRouter>
     <Routes>
-     <Route exact path="/" component={Home}/>
-     <Route exact path="/substancias/:id/Edit" component={EditPage}/>
-     <Route exact path="/substancias/:id/Detail" component={DetailPage}/>
+     <Route path="/" element={<Home/>}/> 
+     <Route path="/substancias/:id/Edit" element={<EditPage/>}/> 
+     <Route path="/substancias/:id/Detail" element={<DetailPage/>}/>
     </Routes>  
-    </>
+    </BrowserRouter>
   )
 }
 
