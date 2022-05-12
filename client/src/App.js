@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import './App.css'
-import InputSubstancia from './components/InputSubstancia'
+import Home from './routes/Home'
 
 function App() {
   return (
     <Fragment>
       <div className="container mt-3">
-        <InputSubstancia />
+        <Home />
       </div>
     </Fragment>
   )
