@@ -5,10 +5,19 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './routes/Home'
 import EditPage from './routes/EditPage'
 import DetailPage from './routes/DetailPage'
+import { AplicacoesProvider } from './API/Aplicacoes'
 
 
 function App() {
-  return (     
+  
+
+  
+
+
+
+  return (    
+    <AplicacoesProvider>
+    
     <BrowserRouter>
     <Routes>
      <Route path="/" element={<Home/>}/> 
@@ -16,6 +25,8 @@ function App() {
      <Route path="/substancias/:id/Detail" element={<DetailPage/>}/>
     </Routes>  
     </BrowserRouter>
+</AplicacoesProvider>
+
   )
 }
 

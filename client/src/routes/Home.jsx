@@ -1,13 +1,15 @@
 import React from 'react'
 import Header from '../components/Header'
-import AddSubstancias from '../components/addSubstancia'
+import AddAplicacao from '../components/AddAplicacao'
+import AllAplicacoesList from  '../components/AllAplicacoesList'
 
 
 function Home() {
   return (
     <>    
         <Header/>
-        <AddSubstancias/>      
+        <AddAplicacao/>  
+        <AllAplicacoesList/>    
       </>
   )
 }
