@@ -9,15 +9,9 @@ import { AplicacoesProvider } from './API/Aplicacoes'
 
 
 function App() {
-  
-
-  
-
-
-
   return (    
-    <AplicacoesProvider>
-    
+    <React.StrictMode>
+    <AplicacoesProvider>    
     <BrowserRouter>
     <Routes>
      <Route path="/" element={<Home/>}/> 
@@ -26,7 +20,7 @@ function App() {
     </Routes>  
     </BrowserRouter>
 </AplicacoesProvider>
-
+</React.StrictMode>
   )
 }
 
